@@ -1,0 +1,12 @@
+@use 'sass:color' as c;
+@mixin box-shadow($color: black, $amount: -93%) {
+    box-shadow: 2px 2px 5px c.scale($color, $alpha: $amount);
+}
+@mixin text-shadow($color: black, $amount: -60%) {
+    text-shadow: 2px 2px 2px c.scale($color, $alpha: $amount);
+}
+
+@mixin translateY {
+    transform: translateY(3px);
+}
+

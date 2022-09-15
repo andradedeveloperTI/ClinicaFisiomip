@@ -1,0 +1,230 @@
+@use 'variaveis' as v;
+@use 'mixin' as m;
+@use 'sass:color' as c;
+
+// CONTAINER IMGS TOPO
+.c-slider {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+
+    // SOBREPOSICAO
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 11;
+        width: 100%;
+        height: 100%;
+        background-color: c.scale(v.$plt1, $alpha: -40%);
+    }
+
+    // ONDE SÃO FEITAS AS TRANSIÇÕES DAS IMGS
+    &__card {
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: opacity 500ms;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__card01 {
+        background-image: url(../_img/topo.jpg);
+    }
+
+    &__card02 {
+        background-image: url(../_img/intraestrutura6.jpg);
+    }
+
+    &__card03 {
+        background-image: url(../_img/infraestrutura5.jpg);
+    }
+
+    &__card04 {
+        background-image: url(../_img/infraestrutura8.jpg);
+    }
+
+    // CONTAINER - REDLINE - BTNS - HORARIOS
+    &__c-over {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        bottom: 22%;
+        text-align: center;
+        padding: 10% v.$spacing-1;
+        z-index: 22;
+
+        & .redline {
+            font-family: 'Open Sans', sans-serif;
+            color: v.$plt4;
+            font-size: 24px;
+            max-width: 23.125em;
+            letter-spacing: 0.063em;
+            line-height: 1.500em;
+            font-weight: v.$fw-semibold;
+            @include m.text-shadow;
+        }
+
+        & .c-btns {
+            display: flex;
+            flex-direction: column;
+
+            & .btns {
+                width: fit-content;
+                padding: 0.70em 1.563em;
+                font-size: 16px;
+                font-family: 'Open Sans', sans-serif;
+                line-height: 1.25em;
+                letter-spacing: 0.063em;
+                font-weight: v.$fw-semibold;
+                background-color: v.$plt2;
+                display: flex;
+                align-items: center;
+                color: v.$plt4;
+                border-radius: 0.625em;
+                @include m.box-shadow;
+            }
+
+            & .icones {
+                margin-top: -0.1ex;
+                margin-right: 0.7ex;
+                width: 1.5em;
+                height: 1.438em;
+                background-repeat: no-repeat;
+                background-size: 90%;
+                background-position: center;
+            }
+
+            & .btn-zap {
+                margin-bottom: v.$spacing-1;
+
+                & .png-zap {
+                    background-image: url(../_img/zap.png);
+                }
+            }
+
+            & .btn-phone {
+                & .png-phone {
+                    background-image: url(../_img/phone.png);
+                }
+            }
+
+        }
+
+        & .horarios {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+            font-weight: v.$fw-medium;
+            color: v.$plt4;
+            line-height: 1.500em;
+            letter-spacing: 0.063em;
+            @include m.text-shadow;
+        }
+    }
+}
+
+@media (min-width: v.$mobile) {
+    .c-slider {
+        &__c-over {
+            & .redline {
+                font-size: 26px;
+            }
+            & .c-btns {
+                & .btns {
+                    font-size: 18px;
+                }
+            }
+            & .horarios {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media (min-width: v.$small) {
+    .c-slider {
+        height: 550px;
+    }
+}
+
+
+@media (min-width: v.$tablet) {
+    .c-slider {
+        height: 600px;
+
+        &__c-over {
+            padding: 80px v.$spacing-1;
+
+            & .redline {
+                font-size: 30px;
+            }
+
+            & .horarios {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@media (min-width: v.$desktop) {
+    .c-slider {
+        height: 700px;
+
+        &__c-over {
+            & .redline {
+                font-size: 45px;
+            }
+
+            & .c-btns {
+                flex-direction: row;
+
+                & .btns {
+                    font-size: 22px;
+                    transition: all 100ms ease-in-out;
+
+                    &:hover {
+                        @include m.translateY;
+
+                    }
+                }
+
+                & .btn-zap {
+                    margin-bottom: initial;
+                    margin-right: 40px;
+                }
+            }
+
+            & .horarios {
+                font-size: 30px;
+            }
+        }
+
+    }
+}
+
+@media (min-width: v.$fullhd) {
+    .c-slider {
+        // ALTURA DO SLIDE FIXADA
+        height: 700px;
+
+
+    }
+}
+
+// CLASSE DA TRANSIÇÃO DAS IMGS
+.c-slider .selected {
+    opacity: 1;
+}

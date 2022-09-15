@@ -1,0 +1,55 @@
+@use 'variaveis' as v;
+
+/*
+######################## BTN MENU ##########################
+*/
+
+.c-btn-menu {
+    position: fixed;
+    top: 31px;
+    right: v.$spacing-1;
+    z-index: 55;
+    width: 36px;
+    height: 26px;
+    &__dash {
+        position: absolute;
+        width: 36px;
+        height: 3px;
+        background-color: v.$plt3;
+        left: 0px;
+        border-radius: 2px;
+        transition: all 300ms ease-out;
+    }
+    &__dash01 {
+        top: 0;
+    }
+    &__dash02 {
+        top: 11px;
+    }
+    &__dash03 {
+        bottom: 0;
+    }
+}
+
+// TRANSICAO
+.is-click-dash01 {
+    top: 11px;
+    transform: rotate(45deg);
+    background-color: v.$plt4;
+}
+// TRANSICAO
+.is-click-dash02 {
+    opacity: 0;
+}
+// TRANSICAO
+.is-click-dash03 {
+    bottom: 12px;
+    transform: rotate(-45deg);
+    background-color: v.$plt4;
+}
+
+@media (min-width: v.$desktop) {
+    .c-btn-menu {
+        display: none;
+    }
+}

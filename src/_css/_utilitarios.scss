@@ -1,0 +1,57 @@
+@use 'variaveis' as v;
+
+p {
+    font-size: 20px;
+    color: v.$plt3;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: v.$fw-regular;
+    line-height: 1.875em;
+    margin-top: 30px;
+}
+
+.separador {
+    padding: 0.538em 0.938em;
+    background-color: v.$plt2;
+    border-radius: 0.313em;
+    width: fit-content;
+}
+
+// TITULOS DENTRO DO SEPARADOR
+h2 {
+    font-size: 18px;
+    font-weight: v.$fw-regular;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 0.813em;
+    color: v.$plt4;
+    letter-spacing: 0.063em;
+}
+
+// SUBTITULOS ABAIXO DO SEPARADOR
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: v.$plt3;
+    font-weight: v.$fw-regular;
+    letter-spacing: 0.063em;
+    margin-top: v.$spacing-1;
+}
+
+// TITULOS SERVICOS EM ESPECIALIDADES
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: v.$plt2;
+    font-weight: v.$fw-regular;
+    letter-spacing: 0.063em;
+}
+
+@media (min-width: v.$desktop) {
+    // TITULOS DENTRO DO SEPARADOR
+    h2 {
+        font-size: 20px;
+    }
+    // SUBTITULOS ABAIXO DO SEPARADOR
+    h3 {
+        font-size: 32px;
+    }
+}

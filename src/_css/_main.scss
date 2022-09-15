@@ -1,0 +1,730 @@
+@use 'variaveis' as v;
+@use 'mixin' as m;
+@use 'sass:color' as c;
+
+.l-main {
+    padding-top: 89px;
+    max-width: v.$fullhd;
+    margin: 0 auto;
+}
+
+// ################# SOBRE ################# 
+
+.l-sobre {
+    width: 100%;
+    padding: 0 v.$spacing-1;
+    margin-top: v.$spacing-4;
+
+    & .c-sobre {
+        max-width: v.$max-width-section;
+        margin: 0 auto;
+        display: grid;
+
+        & .c-sobre-img {
+            width: 100%;
+            display: grid;
+            place-items: center;
+
+            & .c-img {
+                margin-top: v.$spacing-2;
+                width: 100%;
+                height: 60vw;
+                position: relative;
+
+                & img {
+                    position: absolute;
+                    width: 96%;
+                    height: 95%;
+                    object-fit: cover;
+                    top: 0;
+                    left: 0;
+                    border-radius: 5px;
+                    z-index: 1;
+                }
+
+                & .borda {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: 96%;
+                    height: 95%;
+                    border: 6px solid c.scale(v.$plt2, $alpha: -50%);
+                    border-radius: 5px;
+                }
+
+                & .nome {
+                    position: absolute;
+                    bottom: 6%;
+                    right: 7%;
+                    z-index: 2;
+                    color: v.$plt4;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 110%;
+                    font-weight: v.$fw-medium;
+                    @include m.text-shadow;
+                }
+            }
+
+        }
+    }
+}
+
+@media (min-width: v.$desktop) {
+    .l-sobre {
+        margin-top: v.$spacing-5;
+
+        & .c-sobre {
+            grid-template-columns: 55% 45%;
+
+            .c-sobre-text {
+                padding-right: 90px;
+
+            }
+
+            .c-sobre-img .c-img {
+                margin-top: initial;
+                height: 354px;
+
+            }
+        }
+    }
+}
+
+// ################# ESPECIALIDADES #################
+
+.l-especialidades {
+    width: 100%;
+    padding: 0 v.$spacing-1;
+    margin-top: v.$spacing-4;
+
+    & .c-especialidades {
+        max-width: v.$max-width-section;
+        margin: 0 auto;
+
+        & .servicos {
+
+            & .itens {
+                margin-top: v.$spacing-4;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                p {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: v.$tablet) {
+    .l-especialidades .c-especialidades .servicos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        & .itens {
+            & p {
+                width: 80%;
+            }
+        }
+    }
+}
+
+@media (min-width: v.$desktop) {
+    .l-especialidades {
+        margin-top: v.$spacing-5;
+
+        & .c-especialidades .servicos {
+            grid-template-columns: repeat(3, 1fr);
+
+            & .itens {
+                & p {
+                    width: 85%;
+                }
+            }
+        }
+    }
+
+}
+
+// ################# BANNER #################
+
+.l-banner {
+    padding: 1.450em v.$spacing-1 3em v.$spacing-1;
+    margin-top: v.$spacing-4;
+    width: 100%;
+    height: 350px;
+    background-image: linear-gradient(to right, c.scale(v.$plt1, $alpha: -40%), c.scale(v.$plt1, $alpha: -40%)), url('../_img/intraestrutura6.jpg');
+    background-repeat: no-repeat;
+    background-size: 145%;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & h3 {
+        max-width: 22em;
+        font-size: 23px;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.500em;
+        letter-spacing: 1px;
+        font-weight: v.$fw-semibold;
+        color: v.$plt4;
+        text-align: center;
+        @include m.text-shadow;
+    }
+
+    & .c-btns {
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+
+        & .btns {
+            width: fit-content;
+            padding: 0.70em 1.563em;
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.25em;
+            letter-spacing: 0.063em;
+            font-weight: v.$fw-semibold;
+            background-color: v.$plt2;
+            display: flex;
+            align-items: center;
+            color: v.$plt4;
+            border-radius: 0.625em;
+            @include m.box-shadow;
+        }
+
+        & .icones {
+            margin-top: -0.1ex;
+            margin-right: 0.7ex;
+            width: 1.5em;
+            height: 1.438em;
+            background-repeat: no-repeat;
+            background-size: 90%;
+            background-position: center;
+        }
+
+        & .btn-zap {
+            margin-bottom: v.$spacing-1;
+
+            & .png-zap {
+                background-image: url(../_img/zap.png);
+            }
+        }
+
+        & .btn-phone {
+            & .png-phone {
+                background-image: url(../_img/phone.png);
+            }
+        }
+
+    }
+}
+
+@media (min-width: v.$mobile) {
+    .l-banner {
+        & .c-btns {
+            & .btns {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media (min-width: v.$tablet) {
+    .l-banner {
+        & h3 {
+            font-size: 30px;
+        }
+    }
+}
+
+@media (min-width: v.$desktop) {
+    .l-banner {
+        height: 375px;
+
+        & h3 {
+            font-size: 42px;
+        }
+
+        & .c-btns {
+            width: 730px;
+            flex-direction: row;
+            justify-content: space-between;
+
+            & .btns {
+                font-size: 21px;
+                transition: all 100ms ease-in-out;
+
+                &:hover {
+                    @include m.translateY;
+
+                }
+            }
+
+            & .btn-zap {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// ################# EQUIPE #################
+
+.l-equipe {
+    width: 100%;
+    padding: 0 v.$spacing-1;
+    margin-top: v.$spacing-4;
+
+    & .c-equipe {
+        max-width: v.$max-width-section;
+        margin: 0 auto;
+        display: grid;
+
+        & .c-equipe-img {
+            width: 100%;
+            display: grid;
+            place-items: center;
+
+            & .c-img {
+                margin-top: v.$spacing-2;
+                width: 100%;
+                height: 60vw;
+                position: relative;
+
+                & img {
+                    position: absolute;
+                    width: 96%;
+                    height: 95%;
+                    object-fit: cover;
+                    top: 0;
+                    left: 0;
+                    border-radius: 5px;
+                    z-index: 1;
+                }
+
+                & .borda {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: 96%;
+                    height: 95%;
+                    border: 6px solid c.scale(v.$plt2, $alpha: -50%);
+                    border-radius: 5px;
+                }
+
+            }
+
+            & .nome {
+                margin-top: 0.5em;
+                color: v.$plt2;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                font-weight: v.$fw-regular;
+                text-align: center;
+            }
+
+        }
+    }
+}
+
+@media (min-width: v.$tablet) {
+    .l-equipe {
+        & .c-equipe {
+            & .c-equipe-img {
+                & .nome {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: v.$desktop) {
+    .l-equipe {
+        margin-top: v.$spacing-5;
+
+        & .c-equipe {
+            grid-template-columns: 55% 45%;
+
+            .c-equipe-text {
+                padding-right: 90px;
+
+            }
+
+            .c-equipe-img {
+
+                & .nome {
+                    font-size: 16px;
+                }
+
+                & .c-img {
+                    margin-top: initial;
+                    height: 354px;
+
+                }
+            }
+
+        }
+    }
+}
+
+// ################# GALERIA #################
+
+.l-galeria {
+    width: 100%;
+    padding: 0 v.$spacing-1;
+    margin-top: v.$spacing-4;
+
+    & .c-galeria {
+        max-width: v.$max-width-section;
+        margin: 0 auto;
+
+        & .galeria {
+            margin: v.$spacing-3 0 0 0;
+            display: grid;
+            row-gap: 5px;
+
+            .imgs {
+
+                & img {
+                    width: 100%;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: v.$tablet) {
+    .l-galeria .c-galeria .galeria {
+        column-gap: v.$spacing-tiny;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: v.$desktop) {
+    .l-galeria {
+        margin-top: v.$spacing-5;       
+    }
+}
+
+// ################# CONVENIOS #################
+
+.l-convenios {
+    width: 100%;
+    padding: 0 v.$spacing-1;
+    margin-top: v.$spacing-4;
+
+    & .c-convenios {
+        max-width: v.$max-width-section;
+        margin: 0 auto;
+
+        & .convenios {
+            margin: v.$spacing-4 0 0 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: v.$spacing-3;
+
+            .imgs {
+                display: grid;
+                place-items: center;
+
+                & img {
+                    width: 80px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: v.$tablet) {
+    .l-convenios .c-convenios .convenios {
+        column-gap: v.$spacing-tiny;
+        grid-template-columns: repeat(4, 1fr);
+
+        & .imgs {
+            & img {
+                width: 100px;
+            }
+        }
+    }
+}
+
+@media (min-width: v.$desktop) {
+    .l-convenios {
+        margin-top: v.$spacing-5;
+
+        & .c-convenios .convenios {
+            grid-template-columns: repeat(7, 1fr);
+        }
+    }
+}
+
+// ################# CONTATO #################
+
+.l-contato {
+    width: 100%;
+    padding: v.$spacing-4 v.$spacing-1;
+    background-color: v.$bg-contato;
+    margin-top: v.$spacing-4;
+
+    & .c-contato {
+        max-width: v.$max-width-section;
+        margin: 0 auto;
+        display: grid;
+
+        & .c-nosso-endereco {
+
+            & p {
+                & .light {
+                    font-weight: v.$fw-light;
+                }
+
+                & .bold {
+                    font-weight: v.$fw-semibold;
+                    text-decoration: none;
+                    color: v.$plt3;
+                }
+
+            }
+            
+            & .telefones {
+                
+                
+                & a {                    
+                    display: flex;
+                    align-items: center;
+                    width: fit-content; 
+                    text-decoration: underline;
+                    padding: 0.3em 0;
+                    font-size: 20px;
+                    color: v.$plt3;
+                    font-family: 'Open Sans', sans-serif;
+                    font-weight: v.$fw-semibold;
+                    & .icones {
+                        width: 23px;
+                        height: 23px;
+                        background-repeat: no-repeat;
+                        background-size: 100%;
+                        background-position: center;
+                        margin-right: 0.3em;
+                        margin-bottom: -0.1em;
+                    }
+                    & .telefone {
+                        background-image: url('../_img/phone-green.png');
+                    }
+                    & .whatsapp {
+                        background-image: url('../_img/zap-green.png');
+                    }
+                }
+                & a:first-of-type {
+                    margin-bottom: 3px;
+                }
+
+            }
+
+
+            & .c-map {
+                margin-top: v.$spacing-2;
+                width: 100%;
+                height: 275px;
+                border-radius: 4px;
+                border: 2px solid c.scale(v.$plt2, $alpha: -60%);
+
+            }
+        }
+
+        & .c-fale-conosco {
+            margin-top: v.$spacing-3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            & h3 {
+                margin-top: 0;
+            }
+
+            & .c-redes-sociais {
+                margin-top: v.$spacing-2;
+                width: 100px;
+                display: flex;
+                justify-content: space-between;
+
+                & .icones {
+                    width: 30px;
+                    height: 30px;
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    background-position: center;
+                }
+
+                & .email {
+                    width: 38px;
+                    background-image: url('../_img/email.png');
+                }
+
+                & .instagram {
+                    background-image: url('../_img/instagram.png');
+                }
+
+                & .facebook {
+                    display: none;
+                    background-image: url('../_img/facebook.png');
+                }
+            }
+
+            .form {
+                margin-top: v.$spacing-3;
+                width: 100%;
+                padding: 60px 20px 20px 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                background-color: white;
+                border-radius: 7px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+                & ::placeholder {
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 16px;
+                    line-height: 1.563em;
+                    color: #4f4f4f;
+                    font-weight: v.$fw-light;
+
+                }
+
+                & input,
+                & textarea,
+                & button {
+                    width: 100%;
+                    padding: 10px;
+                    border: none;
+                    margin-bottom: 30px;
+                }
+
+                & input {
+                    outline: 0;
+                    height: 1.875em;
+                    border-bottom: 1px solid #bababa61;
+                }
+
+                & textarea {
+                    background-color: #f4f4f4;
+                    border-radius: 0.438em;
+                    height: 6.5em;
+                    resize: none;
+                }
+
+                & button {
+                    padding: 0.45em 0 0.56em 0;
+                    line-height: 22px;
+                    border-radius: 0.625em;
+                    background-color: v.$plt2;
+                    color: v.$plt4;
+                    font-size: 22px;
+                    font-family: 'Open Sans', sans-serif;
+                    font-weight: v.$fw-semibold;
+                    letter-spacing: 0.063em;
+                  
+                }
+            }
+        }
+
+    }
+}
+
+@media (min-width: v.$tablet) {
+    .l-contato {
+        & .c-contato {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: v.$spacing-5;
+
+            & .c-fale-conosco {
+                margin-top: 0;
+
+            }
+        }
+    }
+}
+
+@media (min-width: v.$desktop) {
+    .l-contato {
+        margin-top: v.$spacing-5;
+
+        & .c-contato {
+            column-gap: 200px;
+
+            & .c-fale-conosco {
+                & .c-redes-sociais {
+                    & .icones {
+                        transition: all 100ms ease;
+
+                        &:hover {
+                            @include m.translateY;
+                        }
+                    }
+                }
+
+                & .form {
+                    & button {
+                        transition: all 100ms ease;
+
+                        &:hover {
+                            @include m.translateY;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ########## WHATSAPP PAGINA ##########
+
+
+@keyframes pulsar-whats-pagina {
+    0%,
+    4%,
+    8%,
+    100% {
+        transform: scale(1);
+    }
+    2%,
+    6% {
+        transform: scale(1.1);
+    }
+}
+
+
+.whats-pagina {
+    position: fixed;
+    right: v.$spacing-1;
+    bottom: v.$spacing-1;
+    width: 60px;
+    height: 60px;
+    background-image: url('../_img/whats-pagina.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    z-index: 22;
+    animation: pulsar-whats-pagina 6s ease-in-out 4s infinite forwards;
+}
+
+@media (min-width: v.$desktop) {
+    .whats-pagina {
+        width: 70px;
+        height: 70px;
+
+        &:hover {
+            transition: all 100ms ease-in-out;
+
+            &:hover {
+                transform: scale(0.95);
+            }
+        }
+    }
+}

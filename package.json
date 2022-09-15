@@ -1,0 +1,23 @@
+{
+    "name": "fisiomip",
+    "version": "1.0.0",
+    "description": "",
+    "main": "gulpfile.js",
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/core": "7.16.7",
+        "@babel/preset-env": "7.16.7",
+        "gulp-babel": "8.0.0",
+        "gulp-concat": "2.6.1",
+        "gulp-htmlmin": "5.0.1",
+        "gulp-uglify": "3.0.2",
+        "gulp-uglifycss": "1.1.0"
+  
+    },
+    "scripts": {
+        "start": "gulp"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }

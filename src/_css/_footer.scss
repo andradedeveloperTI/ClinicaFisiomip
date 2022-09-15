@@ -1,0 +1,115 @@
+@use 'variaveis' as v;
+
+.l-footer {
+    padding-top: v.$spacing-2;
+    width: 100%;
+    height: 240px;
+    background-color: #505050;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .c-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .c-logo-titulo {
+            display: flex;
+            align-items: center;
+            width: fit-content;
+
+            .c-logo {
+                width: 55px;
+                height: 55px;
+                margin-right: 0.25em;
+
+                & .logo {
+                    width: 100%;
+                    height: 100%;
+                    background-image: url('../_img/logo.png');
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    background-position: center;
+                }
+            }
+
+            .c-titulos {
+
+                & .titulo {
+                    font-family: 'AnnaStd';
+                    font-weight: v.$fw-light;
+                    font-size: 42px;
+                    line-height: 1em;
+                    margin-top: 0.063em;
+                    color: v.$plt2;
+                }
+
+                & .subtitulo {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 14px;
+                    font-weight: v.$fw-medium;
+                    line-height: 1em;
+                    margin-left: 0.125em;
+                    margin-top: -0.313em;
+                    color: v.$plt2;
+                }
+            }
+        }
+
+        & .c-copy {
+            margin-top: v.$spacing-2;
+            text-align: center;
+
+            p {
+                margin-top: 0;
+                font-size: 18px;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: v.$fw-regular;
+                line-height: 1.25em;
+                color: v.$plt4;
+
+                & a {
+                    color: #c8c8c8;
+                    text-decoration:underline;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: v.$tablet) {
+    .l-footer {
+        height: 141px;
+
+        & .c-footer {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 600px;
+            height: 80px;
+
+            & .c-logo-titulo {
+                & .c-logo {
+                    width: 80px;
+                    height: 80px;
+                }
+
+                & .c-titulos {
+                    & .titulo {
+                        font-size: 54px;
+                    }
+
+                    & .subtitulo {
+                        font-size: 26px;
+                    }
+                }
+
+            }
+
+            & .c-copy {
+                margin-top: 0;
+                text-align: left;
+            }
+        }
+    }
+}

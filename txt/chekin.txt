@@ -1,0 +1,18 @@
+Google search console 
+Site map / robots
+Destription                                *
+Logo e título vai pra home - look outline  *
+Shortcut icon                              * 
+Miniatura                                  *
+Tags og: (open graph)                      *
+Keywords                                   *
+Author                                     *
+Generator                                  *
+Outline / hover / active                   *
+Email PHP                                  *
+Copyright com link                         *
+Checar links menu - se estão apontados     *
+olhar alt das imgs                         *
+Subir para o GIT                           *
+gulp                                       *
+Cookies                                    *
